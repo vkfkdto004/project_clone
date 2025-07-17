@@ -5,11 +5,20 @@
 # Github
 > 외근 시에 간단하게 작업할 수 있도록 동기화
 
+```bash
+git add -> git commit -> git push
+
+gitlab -> origin/main
+github -> github/main
+```
 
 
 # Mini Project
 
-Gitlab + Jeknins + Docker + Harbor 환경
+인프라: Gitlab + Jeknins + Docker + Harbor 환경
+개발: HTML + CSS + JavaScript + PHP + MySQL 
+(PHP회원사이트 만들기 -> 유튜브 왕초보 홈페이지만들기 https://youtube.com/@kingchobo?si=Pj-aTaBTs0TX8OpT  감사합니다(_ _))
+
 
 ---
 

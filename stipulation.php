@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>약관</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-r border-bottom">
-            <a href="/" class="d-flex align-items-cneter mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="images/logo.svg" style="width:2rem;" class="me-2">
-                <span class="fs-4">Kim's Devops</span>
-            </a>
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">프로젝트 소개</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">게시판</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">회원가입</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">로그인</a></li>
-            </ul>
-        </header>
-        <main>
-            <h1 class="text-center mt-5">회원 약간 및 개인정보 취급방침 동의</h1>
+<?php include 'inc_header.php'; ?>
+        <main class="p-5 border rounded-5">
+            <h1 class="text-center">회원 약간 및 개인정보 취급방침 동의</h1>
             <h4>회원 약관</h4>
             <textarea name="" id="" cols="30" rows="10" class="form-control">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt repellat quos pariatur inventore architecto quo dolorem magni eius, esse sunt eos tempora non nobis numquam corrupti ratione alias iure dicta vel officiis. Eum, doloremque dolorem laborum porro cum nesciunt a voluptas. Aut sunt mollitia numquam voluptatum perspiciatis tenetur enim eaque hic blanditiis deleniti possimus autem deserunt esse sint neque voluptas veritatis earum consectetur, sed laboriosam iste cumque maxime! Nesciunt reprehenderit odio obcaecati vel architecto, eligendi eveniet deserunt, velit totam, quae officiis sunt. Deserunt a consequatur voluptatem vero, nemo quo eligendi quae culpa. Cumque non doloribus at expedita, dicta quas quisquam? Hic reprehenderit in iusto soluta quis accusantium sit, aspernatur maxime, cumque quae odit distinctio maiores nihil nesciunt ea animi placeat reiciendis aliquam ducimus fuga incidunt? Tenetur iusto dolor harum ab qui, reprehenderit, suscipit quibusdam aliquam quasi aut provident earum quidem. Architecto nemo dolorum magni nobis fugit ab quod voluptatum distinctio quis expedita, accusantium eius soluta praesentium amet iusto a quaerat tempora sed corporis deserunt consequatur sapiente tenetur! Accusantium officia ratione minus dignissimos, mollitia optio consectetur odio vel, id sunt cupiditate. Fugiat iusto cumque sequi sint similique perspiciatis magnam voluptate sit in mollitia, corrupti consequuntur. Cumque laborum ad iste nihil quae nemo odio, autem repellendus exercitationem nulla consequatur adipisci sapiente quia iure incidunt, aperiam excepturi quos iusto, nisi dicta voluptates doloribus explicabo temporibus saepe? Libero quasi fugiat beatae adipisci perferendis amet nemo dicta nesciunt cumque suscipit ad in officia aperiam natus quas vero repudiandae magni labore praesentium aut, magnam impedit. Dolorem vel eum esse. Eaque voluptas obcaecati maxime reprehenderit distinctio tenetur magni modi nulla, minima sit consequatur commodi officiis rerum ab facilis nobis iste quisquam aspernatur voluptatibus provident impedit quam nisi quae. Sed corrupti soluta mollitia voluptate eligendi expedita. Tenetur, nostrum vel! Perferendis, vitae fugiat unde cum rem dolorem temporibus. Saepe!
             </textarea>
             <div class="form-check mt-3">
-                <input class="form-check-input" type="checkbox" value="" id="flexcheckDefault">
-                <label class="form-check-label" for="flexcheckDefault">
+                <input class="form-check-input" type="checkbox" value="" id="chk_member_1">
+                <label class="form-check-label" for="chk_member_1">
                     위 약관에 동의하시겠습니까?
                 </label>
             </div>
@@ -39,28 +16,17 @@
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima alias quas cupiditate voluptatum veniam doloremque itaque illo. Dicta aperiam omnis animi, modi vel eius ex saepe illo, repellendus, quos a aspernatur facilis eaque similique sequi. Sapiente ipsam ratione aspernatur eveniet aliquid obcaecati iure quo molestiae autem possimus repellendus corrupti et perferendis dolor animi ducimus quod maxime, laboriosam fugit, ut mollitia. Quibusdam, commodi! Atque recusandae provident hic eos dignissimos rem itaque soluta. Quidem tempora provident placeat quibusdam enim ut, nisi, cupiditate quis fugiat ex aliquid temporibus facere expedita soluta, recusandae reiciendis magnam? Amet ullam quod itaque! Neque quas maxime maiores provident, recusandae consequuntur voluptatem similique voluptatum, praesentium dignissimos distinctio placeat a quis dolor, impedit numquam expedita sed consequatur doloremque? Doloribus veniam vitae laboriosam facilis voluptate. Quae quam unde possimus odio reprehenderit explicabo saepe, iure vitae vel est rem illum architecto nam cumque dignissimos veritatis dolorem itaque quo accusantium tenetur porro dolorum non expedita! Odit maxime quis aperiam fuga nobis voluptatibus ullam esse quae dolorum quo aspernatur, iste aut et illum! Ratione facere, neque totam velit voluptatem quis rerum, soluta sit cum, placeat molestiae sapiente! Molestias eligendi in tenetur tempore autem itaque pariatur nulla maxime, assumenda cupiditate magni, blanditiis atque doloribus ut.
             </textarea>
             <div class="form-check mt-3">
-                <input class="form-check-input" type="checkbox" value="" id="flexcheckDefault">
-                <label class="form-check-label" for="flexcheckDefault">
+                <input class="form-check-input" type="checkbox" value="" id="chk_member_2">
+                <label class="form-check-label" for="chk_member_2">
                     위 개인정보 취급방침에 동의하시겠습니까?
                 </label>
             </div>
             <div class="mt-4 d-flex justify-content-center gap-1">
-                <button class="btn btn-primary">회원가입</button>
+                <button class="btn btn-primary" id="btn_member">회원가입</button>
                 <button class="btn btn-secondary">가입취소</button>
             </div>
+            <form method="post" name="stipulation_form" action="member_input.php" style="display:none">
+                <input type="hidden" name="chk" value="0">
+            </form>
         </main>
-    </div>
-
-    <footer class="footer mt-5 py-3 bg-primary">
-        <div class="container d-flex gap-2">
-            <img src="images/logo.svg" style="width:5rem" class="me-2">
-            <div class="d-flex flex-column">
-                <span class="text-bg-primary">프로젝트명: Kim's Mini Project</span>
-                <span class="text-bg-primary">팀 인원: Jeff Kim</span>
-                <span class="text-bg-primary">Email: Kimwooseop12@gmail.com</span>
-            </div>
-        </div>
-    </footer>
-</body>
-</body>
-</html>
+<?php include 'inc_footer.php'; ?>
