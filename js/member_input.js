@@ -119,8 +119,76 @@ document.addEventListener("DOMContentLoaded", () => {
             alert('중복되는 이메일이 있습니다. 다른 이메일을 사용해주세요.')
             return false
         }
-
-
+        // 7. 우편번호 입력 체크
+        if(f.zipcode.value == '') {
+            alert("우편번호를 입력해주세요.")
+            return false
+        }
+        // 8. 주소 및 상세주소 입력 체크
+        if(f.addr.value == '') {
+            alert("주소를 입력해주세요.")
+            f.addr.focus()
+            return false
+        }
+        if(f.addr_detail.value == '') {
+            alert("상세주소를 입력해주세요,")
+            f.addr_detail.focus()
+            return false
+        }
+        f.submit() // form에 action 주소로 제출됨.
     })
 
+    // 우편번호 찾은 후 삽입
+    const btn_zipcode = document.querySelector("#btn_zipcode")
+    btn_zipcode.addEventListener("click", () => {
+        new daum.Postcode({
+        oncomplete: function(data) {
+            console.log(data)
+            let addr = ''
+            let extra_addr = ''
+
+            if(data.userSelectedType == 'J') {
+                addr = data.jibunAddress
+            } else if(data.userSelectedType == 'R') {
+                addr = data.roadAddress
+            }
+            if(data.bname != '') {
+                extra_addr = data.bname
+            }
+            if(data.buildingName != '') {
+                if(extra_addr == '') {
+                    extra_addr = data.buildingName
+                } else {
+                    extra_addr += ', ' + data.buildingName
+                }
+            }
+            if(extra_addr != '') {
+                extra_addr = ' (' + extra_addr + ')'
+            }
+            const f_addr = document.querySelector('#f_addr')
+            f_addr.value = addr + extra_addr
+
+            const f_zipcode = document.querySelector("#f_zipcode")
+            f_zipcode.value = data.zonecode
+
+            const f_addr_detail = document.querySelector("#f_addr_detail")
+            f_addr_detail.focus()
+        }
+    }).open();
+    })
+    // 이미지 삽입 인식
+    const f_photo = document.querySelector("#f_photo")
+    f_photo.addEventListener("change", (e) => {
+        // 이미지 로딩 시작
+        console.log(e)
+        const reader = new FileReader() // FileReader 객체 -> 파일이 읽어들였을 때 핸들링 가능
+        reader.readAsDataURL(e.target.files[0])
+
+        // 이미지 로딩 끝나는 시기 확인(onload)
+        reader.onload = function(event) {
+            //console.log(event)
+            const f_preview = document.querySelector("#f_preview")
+            f_preview.setAttribute("src", event.target.result)
+        }
+    })
 })
