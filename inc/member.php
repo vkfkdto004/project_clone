@@ -27,4 +27,21 @@ class Member {
 
         return $stmt->rowCount() ? true : false; // 쿼리 했을때 나오는 row값이 1이상(중복)이면 true 아니면(중복안됨) false
     }
+
+    // 회원정보 입력
+    public function input($marray) {
+        $sql = "INSERT INTO member(id, name, email, password, zipcode, addr, addr_detail, photo, create_at, ip) VALUES
+                (:id, :name, :email, :password, :zipcode, :addr, :addr_detail, :photo, NOW(), :ip)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id'         , $marray['id'          ]);
+        $stmt->bindParam(':name'       , $marray['name'        ]);
+        $stmt->bindParam(':email'      , $marray['email'       ]);
+        $stmt->bindParam(':password'   , $marray['password'    ]);
+        $stmt->bindParam(':zipcode'    , $marray['zipcode'     ]);
+        $stmt->bindParam(':addr'       , $marray['addr'        ]);
+        $stmt->bindParam(':addr_detail', $marray['addr_detail' ]);
+        $stmt->bindParam(':photo'      , $marray['photo'       ]);
+        $stmt->bindParam(':ip'         , $_SERVER['REMOTE_ADDR']);
+        $stmt->execute();
+    }
 }

@@ -6,12 +6,10 @@ if(!isset($_POST['chk']) or $_POST['chk'] != 1) { // chk가 1이면 member_input
 }
 
 $js_array = [ 'js/member_input.js'];
-
+$g_title = '회원가입';
 include 'inc_header.php';
 ?>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-
-
 
 
 <main class="w-50 mx-auto border rounded-5 p-5">
@@ -27,6 +25,13 @@ include 'inc_header.php';
         </div>
         <button type="button" class="btn btn-secondary" id="btn_id_check">아이디 중복확인</button>
     </div>
+    <div class="mt-3 d-flex gap-2 align-items-end">
+        <div>
+            <label for="f_name" class="form-label">이름</label>
+            <input type="text" name="name" class="form-control" id="f_name" placeholder="이름을 입력해주세요.">
+        </div>
+    </div>
+    
 
     <div class="d-flex mt-3 gap-2 justify_content_between">
         <div class="w-50">

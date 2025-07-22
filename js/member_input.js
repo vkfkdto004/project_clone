@@ -89,7 +89,13 @@ document.addEventListener("DOMContentLoaded", () => {
             alert('아이디 중복확인을 해주시기 바랍니다.')
             return false
         }
-        // 3. 비밀빈호 및 비밀번호 확인란 입력 여부
+        // 3. 이름 입력 확인
+        if(f.name.value == '') {
+            alert('이름을 입력해주세요.')
+            f.name.focus()
+            return false
+        }
+        // 4. 비밀빈호 및 비밀번호 확인란 입력 여부
         if(f.password.value == '') {
             alert('비밀번호를 입력해주세요.')
             f.password.focus()
@@ -100,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             f.password_confirm.focuse()
             return false
         }
-        // 4. 비밀번호 일치 확인
+        // 5. 비밀번호 일치 확인
         if(f.password.value != f.password_confirm.value) {
             alert('비밀번호가 일치하지 않습니다. 다시 입력해주세요.')
             f.password.value = ''
@@ -108,23 +114,23 @@ document.addEventListener("DOMContentLoaded", () => {
             f.password.focus()
             return false
         }
-        // 5. 이메일 입력 체크
+        // 6. 이메일 입력 체크
         if(f.email.value == '') {
             alert('이메일을 입력해주세요.')
             f.email.focus()
             return false
         }
-        // 6. 이메일 중복확인 여부
+        // 7. 이메일 중복확인 여부
         if(f.email_chk.value == "0") {
             alert('중복되는 이메일이 있습니다. 다른 이메일을 사용해주세요.')
             return false
         }
-        // 7. 우편번호 입력 체크
+        // 8. 우편번호 입력 체크
         if(f.zipcode.value == '') {
             alert("우편번호를 입력해주세요.")
             return false
         }
-        // 8. 주소 및 상세주소 입력 체크
+        // 9. 주소 및 상세주소 입력 체크
         if(f.addr.value == '') {
             alert("주소를 입력해주세요.")
             f.addr.focus()
