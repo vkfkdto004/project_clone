@@ -35,18 +35,41 @@ class Member {
 
     // 회원정보 입력
     public function input($marray) {
+        // 단방향 암호화
+        $new_hash_password = password_hash($marray['password'], PASSWORD_DEFAULT);
+
         $sql = "INSERT INTO member(id, name, email, password, zipcode, addr, addr_detail, photo, create_at, ip) VALUES
                 (:id, :name, :email, :password, :zipcode, :addr, :addr_detail, :photo, NOW(), :ip)";
         $stmt = $this->conn->prepare($sql);
         $stmt->bindParam(':id'         , $marray['id'          ]);
         $stmt->bindParam(':name'       , $marray['name'        ]);
         $stmt->bindParam(':email'      , $marray['email'       ]);
-        $stmt->bindParam(':password'   , $marray['password'    ]);
+        $stmt->bindParam(':password'   , $new_hash_password);
         $stmt->bindParam(':zipcode'    , $marray['zipcode'     ]);
         $stmt->bindParam(':addr'       , $marray['addr'        ]);
         $stmt->bindParam(':addr_detail', $marray['addr_detail' ]);
         $stmt->bindParam(':photo'      , $marray['photo'       ]);
         $stmt->bindParam(':ip'         , $_SERVER['REMOTE_ADDR']);
         $stmt->execute();
+    }
+
+    // 로그인
+    public function login($id, $pw) {
+        // 암호화 후 패스워드는 복호화해서 알아낼 수 없음 -> 비교하는 방식을 사용하여 로그인해야함.
+        // password_verify 함수 이용하여 비교
+        $sql = "SELECT password FROM member WHERE id=:id";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        if($stmt->rowCount()) {
+            $row = $stmt->fetch();
+            if(password_verify($pw, $row['password'])) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 }

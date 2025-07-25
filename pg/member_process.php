@@ -67,7 +67,7 @@ if($mode == 'id_chk') {
 
     echo "
     <script>
-        self.localtion.href='../member_success.php'
+        self.location.href = '../member_success.php'
     </script>
     ";
 }
