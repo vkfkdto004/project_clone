@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    // 이메일 중복 체크
+    // 이메일 중복 체크 및 이메일 형식 체크
     const btn_email_check = document.querySelector("#btn_email_check")
     btn_email_check.addEventListener("click", () => {
         const f_email = document.querySelector("#f_email")
@@ -68,6 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     f_email.focus()
                 } else if (data.result == 'empty_email') {
                     alert('이메일 입력란이 비었습니다. 이메일을 입력해주세요.')
+                    f_email.focus()
+                } else if (data.result == 'email_format_wrong') {
+                    alert('이메일을 형식에 맞게 입력해주세요.')
+                    f_email.value = ''
                     f_email.focus()
                 }
             }

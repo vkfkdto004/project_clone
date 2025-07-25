@@ -28,12 +28,18 @@ if($mode == 'id_chk') {
     } else {
         die(json_encode(['result' => 'success']));
     }
-// 이메일 중복체크
+// 이메일 입력값 확인 로직
 } else if($mode == 'email_chk') {
-    // 이메일이 입력되었는지 먼저 체크
+    // 1. 이메일 입력되었는지 먼저 체크
     if($email == '') {
         die(json_encode(['result' => 'empty_email']));
     }
+    // 2. 이메일 형식 체크
+    if($mem->email_format_check($email) === false) {
+        die(json_encode(['result' => 'email_format_wrong']));
+    }
+
+    // 3. 이메일 중복 체크
     if($mem->email_exist($email)) {
         die(json_encode(['result' => 'fail']));
     } else {
@@ -41,12 +47,11 @@ if($mode == 'id_chk') {
     }
 } else if ($mode == 'input') {
     // 프로필 이미지 처리
-    $a = explode('.', $_FILES['photo']['name']);
-    $ext = end($a);
+    $tmparr = explode('.', $_FILES['photo']['name']);
+    $ext = end($tmparr);
     $photo = $id .'.'. $ext;
-    
-    copy($_FILES['photo']['tmp_name'], "data/profile/". $photo);
 
+    copy($_FILES['photo']['tmp_name'], "../data/profile/". $photo);
 
     $arr = [
         'id' => $id,
@@ -60,6 +65,10 @@ if($mode == 'id_chk') {
     ];
     $mem->input($arr);
 
-
+    echo "
+    <script>
+        self.localtion.href='../member_success.php'
+    </script>
+    ";
 }
 

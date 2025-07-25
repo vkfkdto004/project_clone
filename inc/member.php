@@ -19,6 +19,11 @@ class Member {
         return $stmt->rowCount() ? true : false; // 쿼리 했을때 나오는 row값이 1이상(중복)이면 true 아니면(중복안됨) false
     }
 
+    // 이메일 입력값 형식 체크
+    public function email_format_check($email) {
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
+
     public function email_exist($email) {
         $sql = "SELECT * FROM `member` WHERE email=:email";
         $stmt = $this->conn->prepare($sql);

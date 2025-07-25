@@ -5,7 +5,7 @@
             <div class="d-flex flex-column">
                 <span class="text-bg-primary">프로젝트명: Kim's Mini Project</span>
                 <span class="text-bg-primary">팀 인원: Jeff Kim</span>
-                <span class="text-bg-primary">Email: Kimwooseop12@gmail.com</span>
+                <span class="text-bg-primary">Email: kimwooseop12@gmail.com</span>
             </div>
         </div>
     </footer>

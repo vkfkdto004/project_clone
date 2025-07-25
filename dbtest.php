@@ -1,24 +1,6 @@
 <?php
 
-// db연결
-include 'inc/dbconfig.php';
+$email = 'aaa@naver.com';
+$rs = filter_var($email, FILTER_VALIDATE_EMAIL); // 입력값이 이메일 형식이 아니면 false 리턴, 이메일 형식이면 이메일 리턴
 
-
-include 'inc/member.php';
-$id = 'gildong';
-$mem = new Member($db);
-$email = 'hong@gilq.dong';
-
-// 아이디 중복 테스트
-// if ($mem->id_exist($id)) {
-//     echo "아이디가 중복됩니다.";
-// } else {
-//     echo "사용 가능한 아이디 입니다.";
-//}
-
-// 이메일 중복 테스트
-if ($mem->email_exist($email)) {
-    echo "이메일이 중복됩니다.";
-} else {
-    echo "사용 가능한 이메일 입니다.";
-}
+echo var_dump($rs);
